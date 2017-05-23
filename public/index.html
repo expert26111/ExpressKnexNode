@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    Welcome to our front - end implementation of our database project!!!!
+    We used MySQL and Neo4j DB. We put them on a Digital Ocean Droplet then we
+    created Node.js apps to execute queries talking to this DBS.
+    Please enjoy our program and please dont' be an ass whenever you have to
+    provide text in the input fields for searching please don't put number!!!
+    <br>
+    <br>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src='logic.js'></script>
+    <script src = "https://maps.googleapis.com/maps/api/js"></script>
+
+</head>
+<body ng-app="activity">
+<div ng-controller="coolController" >
+    <div>
+        <!--<button ng-click="deleteMarkers();getFirst(bookName)" type="button">Show Results From Query!</button>-->
+        Parameter for get cities by book Title : <input ng-model="bookName">
+        <button ng-click="deleteMarkers();getFirst(bookName)" type="button">Show Results From Query(text)!</button>
+    </div>
+    <div>
+
+        <ul>
+            <li  ng-repeat="s in booksFromCityName">{{s}}</li>
+
+        </ul>
+
+        <button ng-click=" placeMarkers()" type="button">Show Cities!</button>
+        <button ng-click="  deleteMarkers()" type="button">Clear Cities Markers!</button>
+    </div>
+
+    <div id="map" style="width:100%;height:800px;">
+        <!--<button ng-click="myMap(booksFromCityName[0].lat,booksFromCityName[0].longt)" type="button">Click Me!</button>-->
+    </div>
+</div>
+</body>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD88q55TflpfhjS_cfyLxy4pNnPdv27LiE&callback=myMap"></script>
+</html>
